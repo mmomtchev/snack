@@ -118,6 +118,24 @@ The code for the client is located under `src/client/`. The webpack build create
 
 Scripts related to deployment, like the Dockerfile, are under `deploy`. Note: even though the scripts are under `deploy`, you must run them from the **root of the repository**; they are sensitive to `cwd`.
 
+## Query Parameters
+
+You can pass certain parameters in the Snack URL to specify behavior in the Device Preview window.
+Here is a summary of all the parameter options you can use.
+
+| variable | default | description | type |
+| -------- | ------- | ----------- | ------ |
+| **platform** | `web` | The platform on which your Snack should be run in the Device Preview window. | `android`, `ios`, `mydevice`, `web` |
+| **name** | | The name of your Snack. When creating a new Snack, a random name is assigned unless one is provided via this prop.  | `string` |
+| **dependencies** |  | Dependencies to be used by your Snack beyond common dependencies and the ones added in the Snack's `package.json`. [Read more about Snack dependencies.]() | _`string[https://github.com/expo/snack/blob/main/docs/snack-sdk.md#using-dependencies]`_ |
+| **sdkVersion** | `44.0.0` | The Expo SDK version that your Snack should use. | `45.0.0`, `44.0.0`, `43.0.0`
+| **supportedPlatforms** | |  | `string[]` |
+| **files** | - |  |  |
+| **snackId** |  |  |  |
+| **description** |  | The description of your Snack | `string`
+| **preview** | `false` |  | `boolean`
+| **theme** | `light` | The visual theme of your Snack | `light`, `dark`
+
 ## Running the tests
 
 We run unit tests with Jest. Run `yarn test` in another terminal to start Jest and have it continuously watch for changes. You also can run `yarn jest` if you want to run Jest without the watcher. Keep unit tests fast so that the feedback loop from them is fast.
